@@ -14,25 +14,19 @@ build:
   noarch: python
   entry_points:
     - lunar-find = lunarcalendar.command:find
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
 requirements:
   host:
-    - python >=3.6
+    - python
     - pip
-    - python-dateutil >=2.8.0
-    - ephem >=3.7.5.3
-    - pytz
   run:
-    - python >=3.6
+    - python
     - python-dateutil >=2.8.0
     - ephem >=3.7.5.3
     - pytz
 
 test:
-  # workaround noarch bug in 3.10
-  requires:
-    - python <3.10
   imports:
     - lunarcalendar
 
@@ -47,4 +41,3 @@ about:
 extra:
   recipe-maintainers:
     - bletham
-    - bkreider
