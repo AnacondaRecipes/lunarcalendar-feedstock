@@ -1,6 +1,0 @@
-[submodule "lunarcalendar-feedstock" ]
-    path = include/foo
-    branch = master
-	url = ../lunarcalendar-feedstock
-
-
